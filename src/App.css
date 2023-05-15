@@ -16,7 +16,7 @@ button {
     display: flex;
     justify-content: space-between;
 }
-.adults {
+.adults, .olds {
     display: flex;
     flex-direction: column;
     gap: 20px;

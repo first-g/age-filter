@@ -5,6 +5,7 @@ import { users } from './data/users';
 
 function App() {
   const [showAdults, SetShowAdults] = useState(false);
+  const [showOld24, SetShowOld24] = useState(false);
   
   const [params, setParams] = useState(null);
 
@@ -20,6 +21,16 @@ function App() {
         return adultsInOther.map((el) =>
           <UsersComponent name={el.name} age={el.age} country={el.country} />
         )
+      case 'old24inKG':
+        let old24InKgz = users.filter(el => el.country === 'Kyrgyzstan' && el.age > 24)
+        return old24InKgz.map((el) =>
+          <UsersComponent name={el.name} age={el.age} country={el.country} />
+        )
+      case 'old24inOther':
+      let old24InOther = users.filter(el => el.country !== 'Kyrgyzstan' && el.age > 24)
+      return old24InOther.map((el) =>
+        <UsersComponent name={el.name} age={el.age} country={el.country} />
+      )
     }
   }
   return (
@@ -41,7 +52,13 @@ function App() {
         </div>
 
         <div className="olds">
-          <button>Кому больше 24</button>
+          <button onClick={() => SetShowOld24(!showOld24)}>Кому больше 24</button>
+          {showOld24 && 
+              <>
+                <button onClick={() => setParams('old24inKG')}>Кто в Кыргызстане</button>
+                <button onClick={() => setParams('old24inOther')}>Кто в другой стране</button>
+              </>
+          }
         </div>
 
         <div className="all">

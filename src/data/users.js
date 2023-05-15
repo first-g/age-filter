@@ -7,5 +7,5 @@ export const users = [
     {name: "albina", age: 20, country: "Kyrgyzstan"},
     {name: "Azimbek", age: 21, country: "Kazakhstan"},
     {name: "Erbol", age: 22, country: "Uzbekistan"},
-    {name: "Nuremir", age: 24, country: "Kyrgyzstan"},
+    {name: "Nuremir", age: 25, country: "Kyrgyzstan"},
 ]
