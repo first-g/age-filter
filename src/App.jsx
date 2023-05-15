@@ -5,10 +5,10 @@ import { users } from './data/users';
 
 function App() {
   const [showAdults, SetShowAdults] = useState(false);
-  const [country, setCountry] = useState(null);
+  const [params, setParams] = useState(null);
 
   const renderUsers = () => {
-    switch (country) {
+    switch (params) {
       case 'adults18_24inKG':
         let adultsInKgz = users.filter(el => el.country === 'Kyrgyzstan' && el.age > 18 && el.age < 24)
         return adultsInKgz.map((el) =>
@@ -29,8 +29,8 @@ function App() {
           <button onClick={() => SetShowAdults(!showAdults)}>Кому больше 18 и меньше 24</button>
           {showAdults &&
             <>
-              <button onClick={() => setCountry('adults18_24inKG')}>Кто в Кыргызстане</button>
-              <button onClick={() => setCountry('adults18_24Other')}>Кто в другой стране</button>
+              <button onClick={() => setParams('adults18_24inKG')}>Кто в Кыргызстане</button>
+              <button onClick={() => setParams('adults18_24Other')}>Кто в другой стране</button>
             </>
           }
         </div>
