@@ -1,28 +1,26 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import './App.css'
-import { adults } from './data/users'
-import Users from './components/Users';
+import UsersComponent from './components/UsersComponent';
+import { users } from './data/users';
 
 function App() {
-  // _____________________________________Кому старше 18
   const [adultsArr, SetAdultsArr] = useState(false);
   const [country, setCountry] = useState(null);
 
   const renderAdults = () => {
     switch (country) {
       case 'Kyrgyzstan':
-        let adultsInKgz = adults.filter(el => el.country === 'Kyrgyzstan')
+        let adultsInKgz = users.filter(el => el.country === 'Kyrgyzstan')
         return adultsInKgz.map((el) =>
-          <Users name={el.name} age={el.age} country={el.country} />
+          <UsersComponent name={el.name} age={el.age} country={el.country} />
         )
       case 'Other':
-        let adultsInOther = adults.filter(el => el.country !== 'Kyrgyzstan')
+        let adultsInOther = users.filter(el => el.country !== 'Kyrgyzstan')
         return adultsInOther.map((el) =>
-          <Users name={el.name} age={el.age} country={el.country} />
+          <UsersComponent name={el.name} age={el.age} country={el.country} />
         )
     }
   }
-  // _____________________________________Кому старше 18
   return (
     <div className='App'>
       <div className="buttons">

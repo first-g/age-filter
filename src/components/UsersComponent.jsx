@@ -1,6 +1,7 @@
 import React from 'react'
 import Css from './User.css'
-const Users = ({name, age, country}) => {
+
+const UsersComponent = ({name, age, country}) => {
     return (
         <div>
             <h2 className={Css.UserName}>{name}</h2>
@@ -10,4 +11,4 @@ const Users = ({name, age, country}) => {
     )
 }
 
-export default Users
+export default UsersComponent
