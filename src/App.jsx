@@ -5,6 +5,7 @@ import { users } from './data/users';
 
 function App() {
   const [showAdults, SetShowAdults] = useState(false);
+  
   const [params, setParams] = useState(null);
 
   const renderUsers = () => {
@@ -37,6 +38,14 @@ function App() {
         
         <div className="teens">
           <button>Кому меньше 18</button>
+        </div>
+
+        <div className="olds">
+          <button>Кому больше 24</button>
+        </div>
+
+        <div className="all">
+          <button>Показать всех</button>
         </div>
 
       </div>
