@@ -1,5 +1,5 @@
 // кому меньше 
-let tinagers = [
+export let tinagers = [
     {name: "Tunuk", age: 18, country: "Kyrgyzstan"},
     {name: "Sezim", age: 17, country: "Kazakhstan"},
     {name: "Nazmi", age: 16, country: "Uzbekistan"},
@@ -8,7 +8,7 @@ let tinagers = [
 ]
 
 // кому больше
-let adults = [
+export let adults = [
     {name: "albina", age: 20, country: "Kyrgyzstan"},
     {name: "Azimbek", age: 21, country: "Kazakhstan"},
     {name: "Erbol", age: 22, country: "Uzbekistan"},
