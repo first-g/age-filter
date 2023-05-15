@@ -4,18 +4,18 @@ import UsersComponent from './components/UsersComponent';
 import { users } from './data/users';
 
 function App() {
-  const [adultsArr, SetAdultsArr] = useState(false);
+  const [showAdults, SetShowAdults] = useState(false);
   const [country, setCountry] = useState(null);
 
-  const renderAdults = () => {
+  const renderUsers = () => {
     switch (country) {
-      case 'Kyrgyzstan':
-        let adultsInKgz = users.filter(el => el.country === 'Kyrgyzstan')
+      case 'adults18_24inKG':
+        let adultsInKgz = users.filter(el => el.country === 'Kyrgyzstan' && el.age > 18 && el.age < 24)
         return adultsInKgz.map((el) =>
           <UsersComponent name={el.name} age={el.age} country={el.country} />
         )
-      case 'Other':
-        let adultsInOther = users.filter(el => el.country !== 'Kyrgyzstan')
+      case 'adults18_24Other':
+        let adultsInOther = users.filter(el => el.country !== 'Kyrgyzstan' && el.age > 18 && el.age < 24)
         return adultsInOther.map((el) =>
           <UsersComponent name={el.name} age={el.age} country={el.country} />
         )
@@ -26,11 +26,11 @@ function App() {
       <div className="buttons">
 
         <div className='adults'>
-          <button onClick={() => SetAdultsArr(!adultsArr)}>Кому старше 18</button>
-          {adultsArr &&
+          <button onClick={() => SetShowAdults(!showAdults)}>Кому больше 18 и меньше 24</button>
+          {showAdults &&
             <>
-              <button onClick={() => setCountry('Kyrgyzstan')}>Кто в Кыргызстане</button>
-              <button onClick={() => setCountry('Other')}>Кто в другой стране</button>
+              <button onClick={() => setCountry('adults18_24inKG')}>Кто в Кыргызстане</button>
+              <button onClick={() => setCountry('adults18_24Other')}>Кто в другой стране</button>
             </>
           }
         </div>
@@ -42,7 +42,7 @@ function App() {
       </div>
 
       <div className='users'>
-        {renderAdults()}
+        {renderUsers()}
       </div>
     </div>
   )
