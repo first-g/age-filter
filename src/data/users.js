@@ -1,5 +1,5 @@
 export const users = [
-    {name: "Tunuk", age: 18, country: "Kyrgyzstan"},
+    {name: "Tunuk", age: 16, country: "Kyrgyzstan"},
     {name: "Sezim", age: 17, country: "Kazakhstan"},
     {name: "Nazmi", age: 16, country: "Uzbekistan"},
     {name: "Bekjan", age: 26, country: "Germany"},
