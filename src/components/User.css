@@ -1,0 +1,13 @@
+.user {
+    /* border: 1px solid; */
+    border-radius: 6px;
+    width: 150px;
+    border-radius: 20px;
+    padding: 9px;
+    background-color: rgb(235, 204, 134);
+    color: rgb(0, 0, 0);
+    box-shadow: 10px 5px 5px black;
+}
+.name{
+    color:rgb(227, 125, 0);
+}

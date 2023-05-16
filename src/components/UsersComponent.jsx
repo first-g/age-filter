@@ -3,10 +3,11 @@ import Css from './User.css'
 
 const UsersComponent = ({name, age, country}) => {
     return (
-        <div>
-            <h2 className={Css.UserName}>{name}</h2>
-            <p>{age}</p>
-            <p>{country}</p>
+        <div className='user'>
+            <h2 className='name'>имя:{name}</h2>
+            <p className='age'>возраст:{age}</p>
+            
+            <p className='country'>страна:{country}</p>
         </div>
     )
 }

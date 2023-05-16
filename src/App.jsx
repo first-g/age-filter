@@ -66,9 +66,6 @@ function App() {
         
         <div className="teens">
           <button onClick={() => SetShowAdults18(!showAdults18)}>Кому меньше 18</button>
-          <br />
-          <br />
-          <br />
           {showAdults18 &&
             <>
               <button onClick={() => setParams('adults18_24inKG18')}>Кто в Кыргызстане</button>
