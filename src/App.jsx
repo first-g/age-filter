@@ -7,6 +7,7 @@ function App() {
   const [showAdults, SetShowAdults] = useState(false);
   const [showOld24, SetShowOld24] = useState(false);
   const [showAdults18, SetShowAdults18] = useState(false);
+  const [showAll, setShowAll]= useState(false)
 
   
   const [params, setParams] = useState(null);
@@ -34,15 +35,19 @@ function App() {
         <UsersComponent name={el.name} age={el.age} country={el.country} />
       )
         case 'adults18_24inKG18':
-          let adultsInKgz18 = users.filter(el => el.country === 'Kyrgyzstan' && el.age < 18 )
-          return adultsInKgz18.map((el) =>
-            <UsersComponent name={el.name} age={el.age} country={el.country} />
-          )
-        case 'adults18_24Other18':
-          let adultsInOther18 = users.filter(el => el.country !== 'Kyrgyzstan' && el.age < 18)
-          return adultsInOther18.map((el) =>
-            <UsersComponent name={el.name} age={el.age} country={el.country} />
-          )
+        let adultsInKgz18 = users.filter(el => el.country === 'Kyrgyzstan' && el.age < 18)
+        return adultsInKgz18.map((el) =>
+          <UsersComponent name={el.name} age={el.age} country={el.country} />
+        )
+      case 'adults18_24Other18':
+        let adultsInOther18 = users.filter(el => el.country !== 'Kyrgyzstan' && el.age < 18)
+        return adultsInOther18.map((el) =>
+          <UsersComponent name={el.name} age={el.age} country={el.country} />
+        )
+      case 'All':
+        return users.map((el) => 
+          <UsersComponent name={el.name} age={el.age} country={el.country} />
+        )
     }
   }
   return (
@@ -83,7 +88,7 @@ function App() {
         </div>
 
         <div className="all">
-          <button>Показать всех</button>
+          <button onClick={() => setParams('All')}>Показать всех</button>
         </div>
 
       </div>
