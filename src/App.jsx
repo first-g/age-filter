@@ -17,36 +17,36 @@ function App() {
       case 'adults18_24inKG':
         let adultsInKgz = users.filter(el => el.country === 'Kyrgyzstan' && el.age > 18 && el.age < 24)
         return adultsInKgz.map((el) =>
-          <UsersComponent name={el.name} age={el.age} country={el.country} />
+          <UsersComponent name={el.name} age={el.age} country={el.country} img={el.img}/>
         )
       case 'adults18_24Other':
         let adultsInOther = users.filter(el => el.country !== 'Kyrgyzstan' && el.age > 18 && el.age < 24)
         return adultsInOther.map((el) =>
-          <UsersComponent name={el.name} age={el.age} country={el.country} />
+          <UsersComponent name={el.name} age={el.age} country={el.country} img={el.img}/>
         )
       case 'old24inKG':
         let old24InKgz = users.filter(el => el.country === 'Kyrgyzstan' && el.age > 24)
         return old24InKgz.map((el) =>
-          <UsersComponent name={el.name} age={el.age} country={el.country} />
+          <UsersComponent name={el.name} age={el.age} country={el.country} img={el.img}/>
         )
       case 'old24inOther':
-      let old24InOther = users.filter(el => el.country !== 'Kyrgyzstan' && el.age > 24)
-      return old24InOther.map((el) =>
-        <UsersComponent name={el.name} age={el.age} country={el.country} />
-      )
-        case 'adults18_24inKG18':
+        let old24InOther = users.filter(el => el.country !== 'Kyrgyzstan' && el.age > 24)
+        return old24InOther.map((el) =>
+          <UsersComponent name={el.name} age={el.age} country={el.country} img={el.img}/>
+        )
+      case 'adults18_24inKG18':
         let adultsInKgz18 = users.filter(el => el.country === 'Kyrgyzstan' && el.age < 18)
         return adultsInKgz18.map((el) =>
-          <UsersComponent name={el.name} age={el.age} country={el.country} />
+          <UsersComponent name={el.name} age={el.age} country={el.country} img={el.img}/>
         )
       case 'adults18_24Other18':
         let adultsInOther18 = users.filter(el => el.country !== 'Kyrgyzstan' && el.age < 18)
         return adultsInOther18.map((el) =>
-          <UsersComponent name={el.name} age={el.age} country={el.country} />
+          <UsersComponent name={el.name} age={el.age} country={el.country} img={el.img}/>
         )
       case 'All':
         return users.map((el) => 
-          <UsersComponent name={el.name} age={el.age} country={el.country} />
+          <UsersComponent name={el.name} age={el.age} country={el.country} img={el.img}/>
         )
     }
   }
